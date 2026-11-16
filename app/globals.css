@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #047857;
+  --primary-hover: #065f46;
+  --secondary: #059669;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Mobile-friendly touch buttons */
+button, a, input, select {
+  touch-action: manipulation;
+}
+
+/* Thermal Receipt Styling on Screen */
+.thermal-paper {
+  background: #ffffff;
+  color: #000000;
+  font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px dashed #cbd5e1;
+  line-height: 1.25;
+}
+
+/* Thermal Printer Continuous Roll Print Rules */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  
+  .no-print, nav, header, aside, .mobile-bottom-nav, footer {
+    display: none !important;
+  }
+
+  #thermal-printable-area, #thermal-printable-area * {
+    visibility: visible;
+  }
+
+  #thermal-printable-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 58mm;
+    margin: 0 !important;
+    padding: 2mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    font-size: 11px !important;
+    line-height: 1.2 !important;
+    color: #000000 !important;
+    background: #ffffff !important;
+  }
+
+  .print-80mm #thermal-printable-area {
+    max-width: 80mm !important;
+    font-size: 12px !important;
+  }
+
+  @page {
+    margin: 0;
+    size: auto;
+  }
+}
+

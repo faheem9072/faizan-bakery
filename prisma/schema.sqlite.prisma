@@ -1,0 +1,188 @@
+// Prisma schema for Faizan Bakery (Local SQLite Preset)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id        String   @id @default(cuid())
+  username  String   @unique
+  name      String
+  role      String   @default("STAFF") // "ADMIN" | "STAFF"
+  pin       String   @default("1234")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("users")
+}
+
+model Customer {
+  id                        String                @id @default(cuid())
+  shopName                  String
+  ownerName                 String
+  mobileNumber              String
+  address                   String
+  openingBalance            Float                 @default(0)
+  currentOutstandingBalance Float                 @default(0)
+  creditLimit               Float?
+  notes                     String?
+  status                    String                @default("ACTIVE") // "ACTIVE" | "INACTIVE"
+  createdAt                 DateTime              @default(now())
+  updatedAt                 DateTime              @updatedAt
+
+  invoices                  Invoice[]
+  payments                  Payment[]
+  transactions              CustomerTransaction[]
+
+  @@map("customers")
+}
+
+model Product {
+  id                String          @id @default(cuid())
+  name              String
+  category          String          @default("General")
+  unit              String          @default("piece") // kg, gram, piece, packet, box, litre
+  sellingPrice      Float
+  costPrice         Float           @default(0)
+  defaultQuantity   Float           @default(1)
+  currentStock      Float           @default(0)
+  lowStockThreshold Float           @default(10)
+  stockTracking     Boolean         @default(true)
+  sourceType        String          @default("IN_HOUSE") // "IN_HOUSE" | "OUTSIDE_PURCHASE"
+  vendorShopName    String?         // Name of shop/vendor where purchased from
+  isActive          Boolean         @default(true)
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
+  invoiceItems      InvoiceItem[]
+  stockMovements    StockMovement[]
+
+  @@map("products")
+}
+
+model Invoice {
+  id                    String        @id @default(cuid())
+  invoiceNumber         String        @unique
+  invoiceDate           DateTime      @default(now())
+  customerId            String
+  subtotal              Float
+  discount              Float         @default(0)
+  grandTotal            Float
+  paidAmount            Float         @default(0)
+  remainingAmount       Float         @default(0)
+  previousBalance       Float         @default(0)
+  totalOutstandingAfter Float         @default(0)
+  status                String        @default("PAID") // "PAID" | "PARTIAL" | "UNPAID" | "CANCELLED"
+  paymentMethod         String?       @default("CASH") // "CASH" | "UPI" | "BANK_TRANSFER" | "CREDIT"
+  cancellationReason    String?
+  cancelledAt           DateTime?
+  createdById           String?
+  notes                 String?
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  customer              Customer      @relation(fields: [customerId], references: [id])
+  items                 InvoiceItem[]
+  payments              Payment[]
+
+  @@map("invoices")
+}
+
+model InvoiceItem {
+  id             String   @id @default(cuid())
+  invoiceId      String
+  productId      String
+  productName    String
+  unit           String
+  quantity       Float
+  unitPrice      Float
+  totalPrice     Float
+  costPrice      Float    @default(0)
+  sourceType     String?  @default("IN_HOUSE")
+  vendorShopName String?
+
+  invoice        Invoice  @relation(fields: [invoiceId], references: [id], onDelete: Cascade)
+  product        Product  @relation(fields: [productId], references: [id])
+
+  @@map("invoice_items")
+}
+
+model Payment {
+  id                   String    @id @default(cuid())
+  receiptNumber        String    @unique
+  paymentDate          DateTime  @default(now())
+  customerId           String
+  invoiceId            String?
+  amount               Float
+  paymentMethod        String    @default("CASH") // "CASH" | "UPI" | "BANK_TRANSFER" | "CHEQUE" | "OTHER"
+  transactionReference String?
+  notes                String?
+  createdById          String?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  customer             Customer  @relation(fields: [customerId], references: [id])
+  invoice              Invoice?  @relation(fields: [invoiceId], references: [id])
+
+  @@map("payments")
+}
+
+model CustomerTransaction {
+  id              String   @id @default(cuid())
+  customerId      String
+  date            DateTime @default(now())
+  type            String   // "INVOICE" | "PAYMENT" | "OPENING_BALANCE" | "ADJUSTMENT" | "INVOICE_CANCELLED"
+  referenceId     String?
+  referenceNumber String?
+  debit           Float    @default(0) // Increases customer debt
+  credit          Float    @default(0) // Decreases customer debt
+  balanceAfter    Float
+  description     String
+  createdAt       DateTime @default(now())
+
+  customer        Customer @relation(fields: [customerId], references: [id])
+
+  @@map("customer_transactions")
+}
+
+model StockMovement {
+  id             String   @id @default(cuid())
+  productId      String
+  date           DateTime @default(now())
+  type           String   // "OPENING" | "PURCHASE_IN" | "SALE_OUT" | "SALE_RETURN" | "ADJUSTMENT"
+  quantity       Float    // positive for addition, negative for deduction
+  balanceAfter   Float
+  referenceId    String?
+  vendorShopName String?
+  unitCost       Float?
+  notes          String?
+  createdAt      DateTime @default(now())
+
+  product        Product  @relation(fields: [productId], references: [id])
+
+  @@map("stock_movements")
+}
+
+model BusinessSetting {
+  id                  String   @id @default("default")
+  businessName        String   @default("FAIZAN BAKERY")
+  tagline             String   @default("Wholesale & Daily Distribution")
+  address             String   @default("Main Road, Market Complex, Opp. Bus Stand")
+  mobileNumber        String   @default("+91 98765 43210")
+  gstNumber           String?  @default("32ABCDE1234F1Z5")
+  invoicePrefix       String   @default("FZ-")
+  currency            String   @default("₹")
+  thermalPrinterWidth String   @default("58mm") // "58mm" | "80mm"
+  upiId               String   @default("faizanbakery@upi")
+  upiName             String   @default("Faizan Bakery")
+  allowNegativeStock  Boolean  @default(true)
+  invoiceFooterNote   String   @default("Thank you for your business! Fresh & Sweet Daily.")
+  updatedAt           DateTime @updatedAt
+
+  @@map("business_settings")
+}
