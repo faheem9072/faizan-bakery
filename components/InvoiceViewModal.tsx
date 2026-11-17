@@ -113,7 +113,7 @@ export default function InvoiceViewModal({
         <div className="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50 no-print">
           <div>
             <div className="flex items-center space-x-2">
-              <span className="font-extrabold text-slate-900 text-base">
+              <span className="font-semibold text-slate-900 text-base">
                 Invoice {invoice.invoiceNumber}
               </span>
               <span
@@ -207,7 +207,7 @@ export default function InvoiceViewModal({
           ) : (
             <div className="bg-white rounded-xl shadow-sm border border-slate-200 p-5 max-w-lg w-full text-sm">
               <div className="border-b pb-3 mb-3">
-                <h3 className="font-extrabold text-base text-slate-900">{settings.businessName}</h3>
+                <h3 className="font-semibold text-base text-slate-900">{settings.businessName}</h3>
                 <p className="text-xs text-slate-500">{settings.address} | Ph: {settings.mobileNumber}</p>
               </div>
 
@@ -256,7 +256,7 @@ export default function InvoiceViewModal({
                     <span>-₹{invoice.discount.toFixed(2)}</span>
                   </div>
                 )}
-                <div className="flex justify-between text-slate-900 font-extrabold text-sm border-t pt-1">
+                <div className="flex justify-between text-slate-900 font-semibold text-sm border-t pt-1">
                   <span>Grand Total:</span>
                   <span>₹{invoice.grandTotal.toFixed(2)}</span>
                 </div>
@@ -269,7 +269,7 @@ export default function InvoiceViewModal({
                     <span>Amount Paid:</span>
                     <span>₹{invoice.paidAmount.toFixed(2)}</span>
                   </div>
-                  <div className="flex justify-between font-extrabold text-slate-900 bg-amber-50 p-2 rounded-lg border border-amber-200">
+                  <div className="flex justify-between font-semibold text-slate-900 bg-amber-50 p-2 rounded-lg border border-amber-200">
                     <span>Total Outstanding Balance:</span>
                     <span className="text-amber-800">₹{invoice.totalOutstandingAfter.toFixed(2)}</span>
                   </div>

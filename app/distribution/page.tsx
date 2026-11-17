@@ -60,7 +60,7 @@ export default function DistributionPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 no-print">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Daily Distribution Register</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               Dispatch Sheet
@@ -96,28 +96,28 @@ export default function DistributionPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Shops Supplied Today</p>
-          <p className="text-lg font-black text-slate-900 mt-0.5">
+          <p className="text-lg font-bold text-slate-900 mt-0.5">
             {data?.summary?.totalShopsVisited || 0} Bakeries
           </p>
         </div>
 
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Total Billed Today</p>
-          <p className="text-lg font-black text-emerald-800 mt-0.5">
+          <p className="text-lg font-bold text-emerald-800 mt-0.5">
             ₹{(data?.summary?.totalSales || 0).toLocaleString('en-IN')}
           </p>
         </div>
 
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Collected Cash / UPI</p>
-          <p className="text-lg font-black text-blue-700 mt-0.5">
+          <p className="text-lg font-bold text-blue-700 mt-0.5">
             ₹{(data?.summary?.totalCollected || 0).toLocaleString('en-IN')}
           </p>
         </div>
 
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">New Credit Added</p>
-          <p className="text-lg font-black text-amber-700 mt-0.5">
+          <p className="text-lg font-bold text-amber-700 mt-0.5">
             ₹{(data?.summary?.totalCreditAdded || 0).toLocaleString('en-IN')}
           </p>
         </div>
@@ -175,7 +175,7 @@ export default function DistributionPage() {
                       <span className="w-5 h-5 rounded-full bg-slate-100 text-slate-700 text-xs font-bold flex items-center justify-center">
                         {i + 1}
                       </span>
-                      <h3 className="font-extrabold text-sm text-slate-900">
+                      <h3 className="font-semibold text-sm text-slate-900">
                         {delivery.customer.shopName}
                       </h3>
                       <span className="text-xs text-slate-500">
@@ -192,7 +192,7 @@ export default function DistributionPage() {
                       <span className="text-[10px] text-slate-400 uppercase font-semibold block">
                         Total Bill
                       </span>
-                      <span className="font-black text-slate-900 text-sm">
+                      <span className="font-bold text-slate-900 text-sm">
                         ₹{delivery.grandTotal.toFixed(2)}
                       </span>
                     </div>
@@ -228,7 +228,7 @@ export default function DistributionPage() {
                       >
                         <span className="font-bold text-slate-800">{item.productName}</span>
                         <div className="text-right">
-                          <span className="font-black text-emerald-800">
+                          <span className="font-bold text-emerald-800">
                             {item.quantity} {item.unit}
                           </span>
                           <span className="text-[10px] text-slate-400 ml-1.5">
@@ -272,7 +272,7 @@ export default function DistributionPage() {
                 {(data?.productSummaries || []).map((p) => (
                   <tr key={p.productId} className="hover:bg-slate-50">
                     <td className="py-3.5 px-4 font-bold text-slate-900">{p.productName}</td>
-                    <td className="py-3.5 px-4 text-right font-black text-emerald-800 text-sm">
+                    <td className="py-3.5 px-4 text-right font-bold text-emerald-800 text-sm">
                       {p.totalQuantity} {p.unit}
                     </td>
                     <td className="py-3.5 px-4 text-right font-bold text-slate-900">

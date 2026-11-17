@@ -103,7 +103,7 @@ export default function StockModal({
           <div className="flex items-center space-x-2">
             <Boxes className="w-5 h-5 text-emerald-700" />
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Add Stock (സ്റ്റോക്ക് ചേർക്കുക)</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Add Stock (സ്റ്റോക്ക് ചേർക്കുക)</h3>
               <p className="text-[11px] text-slate-500">Own production or purchased from other shop</p>
             </div>
           </div>
@@ -220,7 +220,7 @@ export default function StockModal({
               onChange={(e) => setQuantity(e.target.value)}
               placeholder="e.g. 50"
               required
-              className="w-full text-base font-black px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-emerald-800"
+              className="w-full text-base font-bold px-3 py-2 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-emerald-800"
             />
           </div>
 
@@ -239,7 +239,7 @@ export default function StockModal({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-xs shadow-md shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
+              className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-semibold text-xs shadow-md shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>{isSubmitting ? 'Updating...' : 'Confirm Stock Addition (ചേർക്കുക)'}</span>

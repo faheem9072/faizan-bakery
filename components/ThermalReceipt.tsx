@@ -24,7 +24,7 @@ export default function ThermalReceipt({
         widthMode === '58mm' ? 'max-w-[310px] text-[12px]' : 'max-w-[420px] text-[13px]'
       }`}
       style={{
-        fontFamily: "'Courier New', Courier, monospace",
+        fontFamily: "'Roboto Mono', Consolas, Menlo, Monaco, monospace",
       }}
     >
       <pre className="whitespace-pre font-mono font-medium leading-tight text-black m-0">

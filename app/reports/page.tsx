@@ -121,7 +121,7 @@ export default function ReportsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 no-print">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Reports & Financial Analytics</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               Business Intelligence
@@ -243,25 +243,25 @@ export default function ReportsPage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
             <p className="text-[11px] font-semibold text-slate-500">Total Billed Revenue</p>
-            <p className="text-lg font-black text-slate-900 mt-0.5">
+            <p className="text-lg font-bold text-slate-900 mt-0.5">
               ₹{(reportData.totalRevenue || 0).toLocaleString('en-IN')}
             </p>
           </div>
           <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
             <p className="text-[11px] font-semibold text-slate-500">Estimated Production Cost</p>
-            <p className="text-lg font-black text-slate-600 mt-0.5">
+            <p className="text-lg font-bold text-slate-600 mt-0.5">
               ₹{(reportData.totalCost || 0).toLocaleString('en-IN')}
             </p>
           </div>
           <div className="bg-white p-3.5 rounded-xl border border-emerald-200 bg-emerald-50/40 shadow-sm">
             <p className="text-[11px] font-semibold text-emerald-800">Gross Margin Profit</p>
-            <p className="text-lg font-black text-emerald-800 mt-0.5">
+            <p className="text-lg font-bold text-emerald-800 mt-0.5">
               ₹{(reportData.totalProfit || 0).toLocaleString('en-IN')}
             </p>
           </div>
           <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
             <p className="text-[11px] font-semibold text-slate-500">Gross Margin %</p>
-            <p className="text-lg font-black text-purple-700 mt-0.5">
+            <p className="text-lg font-bold text-purple-700 mt-0.5">
               {(reportData.overallMargin || 0).toFixed(1)}%
             </p>
           </div>

@@ -111,7 +111,7 @@ export default function CustomerProfilePage() {
               </span>
               <span className="text-xs text-slate-400">ID: {customer.id.slice(0, 8)}</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-black text-slate-900 mt-1">
+            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 mt-1">
               {customer.shopName}
             </h1>
             <p className="text-xs sm:text-sm font-semibold text-slate-600 mt-0.5">
@@ -143,7 +143,7 @@ export default function CustomerProfilePage() {
 
             <button
               onClick={() => setIsPaymentModalOpen(true)}
-              className="px-4 py-2 rounded-xl text-xs font-extrabold bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 active:scale-95 transition flex items-center space-x-1.5"
+              className="px-4 py-2 rounded-xl text-xs font-semibold bg-emerald-600 hover:bg-emerald-700 text-white shadow-md shadow-emerald-600/20 active:scale-95 transition flex items-center space-x-1.5"
             >
               <Wallet className="w-4 h-4" />
               <span>Record Payment</span>
@@ -155,28 +155,28 @@ export default function CustomerProfilePage() {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-5 border-t border-slate-100">
           <div className="p-3 bg-slate-50 rounded-xl">
             <span className="text-[11px] font-bold text-slate-400 uppercase">Opening Balance</span>
-            <p className="text-base font-black text-slate-800 mt-0.5">
+            <p className="text-base font-bold text-slate-800 mt-0.5">
               ₹{customer.openingBalance.toLocaleString('en-IN')}
             </p>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-xl">
             <span className="text-[11px] font-bold text-slate-400 uppercase">Total Sales Billed</span>
-            <p className="text-base font-black text-slate-800 mt-0.5">
+            <p className="text-base font-bold text-slate-800 mt-0.5">
               ₹{totalPurchases.toLocaleString('en-IN')}
             </p>
           </div>
 
           <div className="p-3 bg-slate-50 rounded-xl">
             <span className="text-[11px] font-bold text-slate-400 uppercase">Total Payments</span>
-            <p className="text-base font-black text-emerald-700 mt-0.5">
+            <p className="text-base font-bold text-emerald-700 mt-0.5">
               ₹{totalPaymentsMade.toLocaleString('en-IN')}
             </p>
           </div>
 
           <div className="p-3 bg-rose-50 rounded-xl border border-rose-200">
             <span className="text-[11px] font-bold text-rose-600 uppercase">Net Outstanding Due</span>
-            <p className="text-base font-black text-rose-700 mt-0.5">
+            <p className="text-base font-bold text-rose-700 mt-0.5">
               ₹{customer.currentOutstandingBalance.toLocaleString('en-IN')}
             </p>
           </div>
@@ -223,7 +223,7 @@ export default function CustomerProfilePage() {
       {activeTab === 'ledger' && (
         <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
           <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
-            <h3 className="font-extrabold text-xs uppercase tracking-wider text-slate-700">
+            <h3 className="font-semibold text-xs uppercase tracking-wider text-slate-700">
               Complete Account Statement (Running Balance)
             </h3>
             <span className="text-xs text-slate-500">
@@ -273,13 +273,13 @@ export default function CustomerProfilePage() {
                       {t.referenceNumber || '-'}
                     </td>
                     <td className="py-3 px-4 text-slate-700 max-w-xs">{t.description}</td>
-                    <td className="py-3 px-4 text-right font-black text-rose-700">
+                    <td className="py-3 px-4 text-right font-bold text-rose-700">
                       {t.debit > 0 ? `₹${t.debit.toFixed(2)}` : '-'}
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-emerald-700">
+                    <td className="py-3 px-4 text-right font-bold text-emerald-700">
                       {t.credit > 0 ? `₹${t.credit.toFixed(2)}` : '-'}
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-slate-900">
+                    <td className="py-3 px-4 text-right font-bold text-slate-900">
                       ₹{t.balanceAfter.toFixed(2)}
                     </td>
                   </tr>
@@ -319,7 +319,7 @@ export default function CustomerProfilePage() {
                     <td className="py-3 px-4 text-slate-700">
                       {inv.items?.length || 0} products
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-slate-900">
+                    <td className="py-3 px-4 text-right font-bold text-slate-900">
                       ₹{inv.grandTotal.toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-right font-bold text-emerald-700">
@@ -388,7 +388,7 @@ export default function CustomerProfilePage() {
                     <td className="py-3 px-4 text-slate-600 font-mono">
                       {p.transactionReference || '-'}
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-emerald-700">
+                    <td className="py-3 px-4 text-right font-bold text-emerald-700">
                       ₹{p.amount.toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-slate-500">{p.notes || '-'}</td>

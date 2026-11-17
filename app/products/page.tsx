@@ -86,7 +86,7 @@ export default function ProductsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Product Catalog (സാധനങ്ങൾ)</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               {products.length} Products
@@ -102,7 +102,7 @@ export default function ProductsPage() {
             setEditingProduct(null);
             setIsProductModalOpen(true);
           }}
-          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
+          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
         >
           <PlusCircle className="w-4 h-4" />
           <span>+ Add Product (സാധനം ചേർക്കുക)</span>
@@ -113,24 +113,24 @@ export default function ProductsPage() {
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">All Bakery Items</p>
-          <p className="text-lg font-black text-slate-900 mt-0.5">{products.length} Items</p>
+          <p className="text-lg font-bold text-slate-900 mt-0.5">{products.length} Items</p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Own Bakery Bake</p>
-          <p className="text-lg font-black text-emerald-700 mt-0.5">
+          <p className="text-lg font-bold text-emerald-700 mt-0.5">
             {products.length - outsideProductsCount} Items
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-amber-200 bg-amber-50/40 shadow-sm">
           <p className="text-[11px] font-semibold text-amber-800">From Other Shops</p>
-          <p className="text-lg font-black text-amber-900 mt-0.5">
+          <p className="text-lg font-bold text-amber-900 mt-0.5">
             {outsideProductsCount} Items
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Low Stock Warnings</p>
           <p
-            className={`text-lg font-black mt-0.5 ${
+            className={`text-lg font-bold mt-0.5 ${
               lowStockCount > 0 ? 'text-rose-700' : 'text-emerald-700'
             }`}
           >
@@ -234,7 +234,7 @@ export default function ProductsPage() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-1.5 gap-1">
-                    <span className="text-[10px] font-extrabold px-2 py-0.5 rounded bg-slate-100 text-slate-600 uppercase">
+                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600 uppercase">
                       {prod.category}
                     </span>
 
@@ -252,11 +252,11 @@ export default function ProductsPage() {
                     )}
                   </div>
 
-                  <h3 className="font-extrabold text-slate-900 text-base">{prod.name}</h3>
+                  <h3 className="font-semibold text-slate-900 text-base">{prod.name}</h3>
 
                   <div className="mt-3 flex items-baseline justify-between">
                     <div>
-                      <span className="text-xl font-black text-emerald-800">
+                      <span className="text-xl font-bold text-emerald-800">
                         ₹{prod.sellingPrice}
                       </span>
                       <span className="text-xs text-slate-500 font-medium ml-1">
@@ -274,8 +274,8 @@ export default function ProductsPage() {
                   <div className="mt-3 p-2.5 bg-slate-50 rounded-xl border border-slate-100 flex items-center justify-between text-xs">
                     <span className="text-slate-500 font-medium">Available Stock:</span>
                     <span
-                      className={`font-black ${
-                        isLow ? 'text-rose-700 font-black' : 'text-slate-900'
+                      className={`font-bold ${
+                        isLow ? 'text-rose-700 font-bold' : 'text-slate-900'
                       }`}
                     >
                       {prod.currentStock} {prod.unit}

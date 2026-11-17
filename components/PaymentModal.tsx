@@ -107,7 +107,7 @@ export default function PaymentModal({
               <Wallet className="w-4 h-4" />
             </div>
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">Record Payment</h3>
+              <h3 className="font-semibold text-slate-900 text-sm">Record Payment</h3>
               <p className="text-[11px] text-slate-500">Collect cash, UPI, or bank transfer</p>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function PaymentModal({
           {selectedCust && (
             <div className="p-3 bg-emerald-50 rounded-xl border border-emerald-200 flex justify-between items-center text-xs">
               <span className="text-emerald-900 font-semibold">Current Outstanding Balance:</span>
-              <span className="font-extrabold text-emerald-800 text-sm">
+              <span className="font-semibold text-emerald-800 text-sm">
                 ₹{selectedCust.currentOutstandingBalance.toFixed(2)}
               </span>
             </div>

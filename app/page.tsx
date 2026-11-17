@@ -74,7 +74,7 @@ export default function DashboardPage() {
               {new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'short', year: 'numeric' })}
             </span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-extrabold mt-1 tracking-tight">
+          <h1 className="text-xl sm:text-2xl font-semibold mt-1 tracking-tight">
             {settings?.businessName || 'Faizan Bakery'} Overview
           </h1>
           <p className="text-xs sm:text-sm text-emerald-200 mt-0.5">
@@ -91,7 +91,7 @@ export default function DashboardPage() {
           </button>
           <Link
             href="/billing"
-            className="px-4 py-2 rounded-xl text-xs sm:text-sm font-extrabold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md transition flex items-center space-x-1.5 active:scale-95"
+            className="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 shadow-md transition flex items-center space-x-1.5 active:scale-95"
           >
             <PlusCircle className="w-4 h-4" />
             <span>Create Bill</span>
@@ -109,7 +109,7 @@ export default function DashboardPage() {
               <TrendingUp className="w-4 h-4" />
             </div>
           </div>
-          <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+          <div className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
             ₹{(stats?.todaySales || 0).toLocaleString('en-IN')}
           </div>
           <div className="text-[11px] text-slate-500 mt-1 flex items-center space-x-1">
@@ -126,7 +126,7 @@ export default function DashboardPage() {
               <WalletCards className="w-4 h-4" />
             </div>
           </div>
-          <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+          <div className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
             ₹{(stats?.todayPaymentsReceived || 0).toLocaleString('en-IN')}
           </div>
           <div className="text-[11px] text-slate-500 mt-1">
@@ -142,7 +142,7 @@ export default function DashboardPage() {
               <CreditCard className="w-4 h-4" />
             </div>
           </div>
-          <div className="text-xl sm:text-2xl font-black text-amber-900 tracking-tight">
+          <div className="text-xl sm:text-2xl font-bold text-amber-900 tracking-tight">
             ₹{(stats?.totalOutstandingCredit || 0).toLocaleString('en-IN')}
           </div>
           <div className="text-[11px] text-amber-700 font-medium mt-1">
@@ -158,7 +158,7 @@ export default function DashboardPage() {
               <Boxes className="w-4 h-4" />
             </div>
           </div>
-          <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+          <div className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">
             {(stats?.todayProductsSupplied || 0).toLocaleString('en-IN')}
           </div>
           <div className="text-[11px] text-slate-500 mt-1">
@@ -172,7 +172,7 @@ export default function DashboardPage() {
         <div className="bg-white p-4 rounded-xl border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs text-slate-500 font-semibold">Monthly Sales (MTD)</p>
-            <p className="text-lg font-black text-slate-900 mt-0.5">
+            <p className="text-lg font-bold text-slate-900 mt-0.5">
               ₹{(stats?.monthlySales || 0).toLocaleString('en-IN')}
             </p>
           </div>
@@ -184,7 +184,7 @@ export default function DashboardPage() {
         <div className="bg-white p-4 rounded-xl border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs text-slate-500 font-semibold">Monthly Collection</p>
-            <p className="text-lg font-black text-slate-900 mt-0.5">
+            <p className="text-lg font-bold text-slate-900 mt-0.5">
               ₹{(stats?.monthlyCollection || 0).toLocaleString('en-IN')}
             </p>
           </div>
@@ -196,7 +196,7 @@ export default function DashboardPage() {
         <div className="bg-white p-4 rounded-xl border border-slate-200 flex items-center justify-between">
           <div>
             <p className="text-xs text-slate-500 font-semibold">Total Customer Shops</p>
-            <p className="text-lg font-black text-slate-900 mt-0.5">
+            <p className="text-lg font-bold text-slate-900 mt-0.5">
               {stats?.totalCustomers || 0} Bakeries
             </p>
           </div>
@@ -290,7 +290,7 @@ export default function DashboardPage() {
                       <p className="text-[11px] text-slate-500">{prod.quantity} {prod.unit} supplied</p>
                     </div>
                   </div>
-                  <span className="text-xs font-black text-slate-900">
+                  <span className="text-xs font-bold text-slate-900">
                     ₹{prod.totalAmount.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -325,7 +325,7 @@ export default function DashboardPage() {
                       <p className="text-[11px] text-slate-500">{cust.ordersCount} orders • Outstanding: ₹{cust.balance.toFixed(0)}</p>
                     </div>
                   </div>
-                  <span className="text-xs font-black text-emerald-800">
+                  <span className="text-xs font-bold text-emerald-800">
                     ₹{cust.totalSales.toLocaleString('en-IN')}
                   </span>
                 </div>
@@ -357,7 +357,7 @@ export default function DashboardPage() {
                   <p className="text-[11px] text-slate-500">{cust.ownerName} • {cust.mobileNumber}</p>
                 </div>
                 <div className="text-right">
-                  <span className="text-xs font-black text-rose-700">
+                  <span className="text-xs font-bold text-rose-700">
                     ₹{cust.balance.toLocaleString('en-IN')}
                   </span>
                   <p className="text-[10px] text-slate-400">Due Balance</p>
@@ -400,7 +400,7 @@ export default function DashboardPage() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs font-black text-slate-900">₹{inv.grandTotal.toFixed(0)}</p>
+                    <p className="text-xs font-bold text-slate-900">₹{inv.grandTotal.toFixed(0)}</p>
                     <span
                       className={`text-[10px] font-bold px-1.5 py-0.2 rounded ${
                         inv.status === 'PAID'

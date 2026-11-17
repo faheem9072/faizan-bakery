@@ -67,7 +67,7 @@ export default function CustomersPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Customer & Bakery Shops</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               {customers.length} Shops
@@ -83,7 +83,7 @@ export default function CustomersPage() {
             setEditingCustomer(null);
             setIsCustomerModalOpen(true);
           }}
-          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
+          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Add New Customer</span>
@@ -94,19 +94,19 @@ export default function CustomersPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Total Customer Credit</p>
-          <p className="text-lg font-black text-rose-700 mt-0.5">
+          <p className="text-lg font-bold text-rose-700 mt-0.5">
             ₹{totalOutstandingAll.toLocaleString('en-IN')}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Bakeries With Pending Dues</p>
-          <p className="text-lg font-black text-amber-700 mt-0.5">
+          <p className="text-lg font-bold text-amber-700 mt-0.5">
             {customers.filter((c) => c.currentOutstandingBalance > 0).length} of {customers.length}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
           <p className="text-[11px] font-semibold text-slate-500">Active Distribution Accounts</p>
-          <p className="text-lg font-black text-emerald-800 mt-0.5">
+          <p className="text-lg font-bold text-emerald-800 mt-0.5">
             {customers.filter((c) => c.status === 'ACTIVE').length} shops
           </p>
         </div>
@@ -161,7 +161,7 @@ export default function CustomersPage() {
                   <div>
                     <Link
                       href={`/customers/${cust.id}`}
-                      className="font-extrabold text-sm text-slate-900 hover:text-emerald-700 flex items-center gap-1 group"
+                      className="font-semibold text-sm text-slate-900 hover:text-emerald-700 flex items-center gap-1 group"
                     >
                       <span>{cust.shopName}</span>
                       <ExternalLink className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition" />
@@ -210,7 +210,7 @@ export default function CustomersPage() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 block">
                       Outstanding Due
                     </span>
-                    <span className="text-sm font-black text-rose-700">
+                    <span className="text-sm font-bold text-rose-700">
                       ₹{cust.currentOutstandingBalance.toFixed(2)}
                     </span>
                   </div>

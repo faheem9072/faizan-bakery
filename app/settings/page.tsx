@@ -111,7 +111,7 @@ export default function SettingsPage() {
     <div className="space-y-6 max-w-4xl mx-auto pb-12">
       {/* Header */}
       <div>
-        <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
           <span>Business & Printer Settings</span>
           <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
             Config
@@ -134,7 +134,7 @@ export default function SettingsPage() {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center space-x-2 border-b border-slate-100 pb-3">
             <Store className="w-4 h-4 text-emerald-700" />
-            <h3 className="font-extrabold text-sm text-slate-900">Bakery Business Profile</h3>
+            <h3 className="font-semibold text-sm text-slate-900">Bakery Business Profile</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
@@ -197,7 +197,7 @@ export default function SettingsPage() {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center space-x-2 border-b border-slate-100 pb-3">
             <Printer className="w-4 h-4 text-emerald-700" />
-            <h3 className="font-extrabold text-sm text-slate-900">
+            <h3 className="font-semibold text-sm text-slate-900">
               Thermal Printer & Billing Configuration
             </h3>
           </div>
@@ -251,7 +251,7 @@ export default function SettingsPage() {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-4">
           <div className="flex items-center space-x-2 border-b border-slate-100 pb-3">
             <CreditCard className="w-4 h-4 text-emerald-700" />
-            <h3 className="font-extrabold text-sm text-slate-900">
+            <h3 className="font-semibold text-sm text-slate-900">
               UPI & Digital Payment Credentials
             </h3>
           </div>
@@ -287,7 +287,7 @@ export default function SettingsPage() {
         <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm space-y-3">
           <div className="flex items-center space-x-2 border-b border-slate-100 pb-3">
             <Boxes className="w-4 h-4 text-emerald-700" />
-            <h3 className="font-extrabold text-sm text-slate-900">Inventory Rules</h3>
+            <h3 className="font-semibold text-sm text-slate-900">Inventory Rules</h3>
           </div>
 
           <div className="flex items-start space-x-2.5 pt-1 text-xs">
@@ -315,7 +315,7 @@ export default function SettingsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm shadow-md shadow-emerald-600/30 flex items-center space-x-2 transition"
+            className="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-semibold text-sm shadow-md shadow-emerald-600/30 flex items-center space-x-2 transition"
           >
             <Save className="w-4 h-4" />
             <span>{saving ? 'Saving...' : 'Save Settings'}</span>

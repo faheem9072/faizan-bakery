@@ -7,6 +7,25 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
+          'sans-serif',
+        ],
+        mono: [
+          '"Roboto Mono"',
+          'Consolas',
+          'Menlo',
+          'Monaco',
+          'monospace',
+        ],
+      },
       colors: {
         bakery: {
           50: '#ecfdf5',
@@ -26,4 +45,3 @@ module.exports = {
   },
   plugins: [],
 }
-

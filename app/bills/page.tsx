@@ -73,7 +73,7 @@ export default function BillsPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Bills & Invoices Register</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-slate-200 text-slate-700 font-bold">
               {invoices.length} Bills
@@ -86,7 +86,7 @@ export default function BillsPage() {
 
         <Link
           href="/billing"
-          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
+          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
         >
           <PlusCircle className="w-4 h-4" />
           <span>New Bill</span>
@@ -97,19 +97,19 @@ export default function BillsPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Filtered Sales Total</p>
-          <p className="text-lg font-black text-slate-900 mt-0.5">
+          <p className="text-lg font-bold text-slate-900 mt-0.5">
             ₹{totalFilteredSales.toLocaleString('en-IN')}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Pending Credit Due</p>
-          <p className="text-lg font-black text-amber-700 mt-0.5">
+          <p className="text-lg font-bold text-amber-700 mt-0.5">
             ₹{totalFilteredDue.toLocaleString('en-IN')}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm col-span-2 sm:col-span-1">
           <p className="text-[11px] font-semibold text-slate-500">Total Bills Shown</p>
-          <p className="text-lg font-black text-emerald-800 mt-0.5">
+          <p className="text-lg font-bold text-emerald-800 mt-0.5">
             {filteredInvoices.length} invoices
           </p>
         </div>
@@ -197,7 +197,7 @@ export default function BillsPage() {
                         {inv.customer?.ownerName} • {inv.customer?.mobileNumber}
                       </div>
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-slate-900">
+                    <td className="py-3 px-4 text-right font-bold text-slate-900">
                       ₹{inv.grandTotal.toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-right font-semibold text-emerald-700">

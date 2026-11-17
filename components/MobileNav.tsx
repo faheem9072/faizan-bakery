@@ -46,7 +46,7 @@ export default function MobileNav({ isOpen, onClose }: MobileNavProps) {
           <div className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm" onClick={onClose} />
           <div className="fixed inset-y-0 left-0 w-72 bg-white shadow-2xl flex flex-col p-4 z-10 animate-in slide-in-from-left duration-200">
             <div className="flex items-center justify-between pb-4 border-b border-slate-100">
-              <span className="font-extrabold text-base text-slate-900">FAIZAN BAKERY</span>
+              <span className="font-semibold text-base text-slate-900">FAIZAN BAKERY</span>
               <button onClick={onClose} className="p-1 rounded-lg text-slate-500 hover:bg-slate-100">
                 <X className="w-5 h-5" />
               </button>

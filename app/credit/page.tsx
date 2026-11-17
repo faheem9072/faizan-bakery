@@ -64,7 +64,7 @@ export default function CreditManagementPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Credit & Outstanding Management</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-amber-100 text-amber-900 font-bold">
               Ledger Balances
@@ -82,7 +82,7 @@ export default function CreditManagementPage() {
           <p className="text-xs font-bold text-rose-800 uppercase tracking-wider">
             Total Outstanding Balance
           </p>
-          <p className="text-2xl font-black text-rose-700 mt-1">
+          <p className="text-2xl font-bold text-rose-700 mt-1">
             ₹{(data?.totalOutstanding || 0).toLocaleString('en-IN')}
           </p>
           <p className="text-[11px] text-rose-600 font-medium mt-1">
@@ -94,7 +94,7 @@ export default function CreditManagementPage() {
           <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
             Bakeries With Zero Balance
           </p>
-          <p className="text-2xl font-black text-emerald-700 mt-1">
+          <p className="text-2xl font-bold text-emerald-700 mt-1">
             {(data?.customerCount || 0) - (data?.customersWithBalanceCount || 0)} Bakeries
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -106,7 +106,7 @@ export default function CreditManagementPage() {
           <p className="text-xs font-bold text-slate-500 uppercase tracking-wider">
             Total Registered Shops
           </p>
-          <p className="text-2xl font-black text-slate-900 mt-1">
+          <p className="text-2xl font-bold text-slate-900 mt-1">
             {data?.customerCount || 0} Accounts
           </p>
           <p className="text-[11px] text-slate-500 mt-1">
@@ -200,7 +200,7 @@ export default function CreditManagementPage() {
                     <td className="py-3.5 px-4 text-right font-semibold text-emerald-700">
                       ₹{c.periodPaymentsReceived.toFixed(2)}
                     </td>
-                    <td className="py-3.5 px-4 text-right font-black text-sm">
+                    <td className="py-3.5 px-4 text-right font-bold text-sm">
                       <span
                         className={
                           c.currentOutstandingBalance > 0

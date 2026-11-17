@@ -79,7 +79,7 @@ export default function Navbar({ onToggleMobileMenu, isMobileMenuOpen }: NavbarP
               </div>
               <div>
                 <div className="flex items-center space-x-1.5">
-                  <span className="font-extrabold text-lg tracking-tight text-slate-900">
+                  <span className="font-semibold text-lg tracking-tight text-slate-900">
                     FAIZAN BAKERY
                   </span>
                   <span className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-emerald-100 text-emerald-800 rounded">

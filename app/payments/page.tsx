@@ -100,7 +100,7 @@ Current Outstanding Balance: ₹${p.customer?.currentOutstandingBalance.toFixed(
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Payment Collections</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               {payments.length} Receipts
@@ -113,7 +113,7 @@ Current Outstanding Balance: ₹${p.customer?.currentOutstandingBalance.toFixed(
 
         <button
           onClick={() => setIsPaymentModalOpen(true)}
-          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
+          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Record New Payment</span>
@@ -124,13 +124,13 @@ Current Outstanding Balance: ₹${p.customer?.currentOutstandingBalance.toFixed(
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Total Filtered Collection</p>
-          <p className="text-xl font-black text-emerald-800 mt-0.5">
+          <p className="text-xl font-bold text-emerald-800 mt-0.5">
             ₹{totalCollected.toLocaleString('en-IN')}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Cash Collections</p>
-          <p className="text-xl font-black text-slate-900 mt-0.5">
+          <p className="text-xl font-bold text-slate-900 mt-0.5">
             ₹
             {filteredPayments
               .filter((p) => p.paymentMethod === 'CASH')
@@ -140,7 +140,7 @@ Current Outstanding Balance: ₹${p.customer?.currentOutstandingBalance.toFixed(
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">UPI / Bank Collections</p>
-          <p className="text-xl font-black text-blue-700 mt-0.5">
+          <p className="text-xl font-bold text-blue-700 mt-0.5">
             ₹
             {filteredPayments
               .filter((p) => p.paymentMethod !== 'CASH')
@@ -238,7 +238,7 @@ Current Outstanding Balance: ₹${p.customer?.currentOutstandingBalance.toFixed(
                     <td className="py-3 px-4 font-mono text-slate-600">
                       {p.transactionReference || '-'}
                     </td>
-                    <td className="py-3 px-4 text-right font-black text-emerald-700 text-sm">
+                    <td className="py-3 px-4 text-right font-bold text-emerald-700 text-sm">
                       ₹{p.amount.toFixed(2)}
                     </td>
                     <td className="py-3 px-4 text-center">

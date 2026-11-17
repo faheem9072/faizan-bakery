@@ -54,7 +54,7 @@ export default function StockPage() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Stock & Inventory Management</span>
             <span className="text-xs px-2 py-0.5 rounded-lg bg-emerald-100 text-emerald-800 font-bold">
               Bakery Goods
@@ -70,7 +70,7 @@ export default function StockPage() {
             setSelectedProduct(null);
             setIsStockModalOpen(true);
           }}
-          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-extrabold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
+          className="inline-flex items-center space-x-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-emerald-600 hover:bg-emerald-700 shadow-md shadow-emerald-600/20 active:scale-95 transition"
         >
           <PlusCircle className="w-4 h-4" />
           <span>Add / Replenish Stock</span>
@@ -81,14 +81,14 @@ export default function StockPage() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Total Stock Value (Retail)</p>
-          <p className="text-xl font-black text-emerald-800 mt-0.5">
+          <p className="text-xl font-bold text-emerald-800 mt-0.5">
             ₹{totalStockSellingValue.toLocaleString('en-IN')}
           </p>
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Low Stock Warnings</p>
           <p
-            className={`text-xl font-black mt-0.5 ${
+            className={`text-xl font-bold mt-0.5 ${
               lowStockCount > 0 ? 'text-rose-700' : 'text-emerald-700'
             }`}
           >
@@ -97,7 +97,7 @@ export default function StockPage() {
         </div>
         <div className="bg-white p-3.5 rounded-xl border border-slate-200 shadow-sm">
           <p className="text-[11px] font-semibold text-slate-500">Tracked Bakery Items</p>
-          <p className="text-xl font-black text-slate-900 mt-0.5">
+          <p className="text-xl font-bold text-slate-900 mt-0.5">
             {inventory.length} Items
           </p>
         </div>
@@ -159,7 +159,7 @@ export default function StockPage() {
                     <td className="py-3.5 px-4 text-right font-medium text-slate-700">
                       ₹{p.sellingPrice} /{p.unit}
                     </td>
-                    <td className="py-3.5 px-4 text-right font-black text-sm">
+                    <td className="py-3.5 px-4 text-right font-bold text-sm">
                       <span className={p.isLowStock ? 'text-rose-700' : 'text-slate-900'}>
                         {p.currentStock} {p.unit}
                       </span>
@@ -216,7 +216,7 @@ export default function StockPage() {
           <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden p-5 animate-in fade-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between pb-3 border-b mb-3">
               <div>
-                <h3 className="font-extrabold text-sm text-slate-900">
+                <h3 className="font-semibold text-sm text-slate-900">
                   Stock Movements: {viewHistoryProduct.name}
                 </h3>
                 <p className="text-xs text-slate-500">
@@ -260,7 +260,7 @@ export default function StockPage() {
 
                     <div className="text-right">
                       <span
-                        className={`font-black text-xs ${
+                        className={`font-bold text-xs ${
                           m.quantity > 0 ? 'text-emerald-700' : 'text-rose-700'
                         }`}
                       >

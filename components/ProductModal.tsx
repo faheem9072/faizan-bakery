@@ -125,7 +125,7 @@ export default function ProductModal({
           <div className="flex items-center space-x-2">
             <PackagePlus className="w-5 h-5 text-emerald-700" />
             <div>
-              <h3 className="font-extrabold text-slate-900 text-sm">
+              <h3 className="font-semibold text-slate-900 text-sm">
                 {product ? 'Edit Product' : 'Add Product (സാധനം ചേർക്കുക)'}
               </h3>
               <p className="text-[11px] text-slate-500">
@@ -148,7 +148,7 @@ export default function ProductModal({
 
           {/* ITEM SOURCE SELECTION (Own Bake vs Outside Shop) */}
           <div className="bg-slate-50 p-3 rounded-xl border border-slate-200">
-            <label className="block text-xs font-black text-slate-800 mb-2">
+            <label className="block text-xs font-bold text-slate-800 mb-2">
               Product Source (ഈ സാധനം എവിടെ നിന്നാണ്?):
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -263,7 +263,7 @@ export default function ProductModal({
                 onChange={(e) => setSellingPrice(e.target.value)}
                 placeholder="e.g. 240"
                 required
-                className="w-full text-sm font-black px-3 py-2 rounded-xl border border-slate-300 text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="w-full text-sm font-bold px-3 py-2 rounded-xl border border-slate-300 text-emerald-800 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
 
@@ -315,7 +315,7 @@ export default function ProductModal({
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-extrabold text-sm shadow-md shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
+              className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white font-semibold text-sm shadow-md shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
             >
               <CheckCircle2 className="w-5 h-5" />
               <span>{isSubmitting ? 'Saving...' : product ? 'Update Product' : 'Save Product (ചേർക്കുക)'}</span>

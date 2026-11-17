@@ -231,7 +231,7 @@ export default function BillingPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight flex items-center gap-2">
+          <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center gap-2">
             <span>Digital Billing POS (ബില്ലിംഗ്)</span>
             <span className="px-2 py-0.5 text-[11px] font-bold bg-emerald-100 text-emerald-800 rounded-lg">
               Faizan Wholesale
@@ -258,7 +258,7 @@ export default function BillingPage() {
           {/* STEP 1: Customer Selection */}
           <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <label className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                 <User className="w-3.5 h-3.5 text-emerald-700" />
                 <span>1. Select Customer Shop (കട തിരഞ്ഞെടുക്കുക) *</span>
               </label>
@@ -276,7 +276,7 @@ export default function BillingPage() {
               <div className="p-3 bg-emerald-50/70 rounded-xl border border-emerald-200 flex items-center justify-between">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="font-extrabold text-base text-slate-900">
+                    <span className="font-semibold text-base text-slate-900">
                       {selectedCustomer.shopName}
                     </span>
                     <span className="text-xs text-emerald-800 font-bold">
@@ -300,7 +300,7 @@ export default function BillingPage() {
                     <span className="text-[10px] uppercase font-bold text-slate-400 block">
                       Previous Due (പഴയ ബാക്കി)
                     </span>
-                    <span className="text-sm font-black text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
+                    <span className="text-sm font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded border border-rose-200">
                       ₹{selectedCustomer.currentOutstandingBalance.toFixed(0)}
                     </span>
                   </div>
@@ -357,7 +357,7 @@ export default function BillingPage() {
                             <span className="text-[10px] text-slate-400 uppercase font-semibold">
                               Due
                             </span>
-                            <p className="text-xs font-black text-rose-700">
+                            <p className="text-xs font-bold text-rose-700">
                               ₹{cust.currentOutstandingBalance.toFixed(0)}
                             </p>
                           </div>
@@ -373,7 +373,7 @@ export default function BillingPage() {
           {/* STEP 2: Product Catalog & Quick Selection Grid */}
           <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-              <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
+              <label className="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
                 <ShoppingBag className="w-3.5 h-3.5 text-emerald-700" />
                 <span>2. Select Products (സാധനങ്ങൾ ചേർക്കുക)</span>
               </label>
@@ -473,19 +473,19 @@ export default function BillingPage() {
                         )}
 
                         {inCart && (
-                          <span className="w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] font-extrabold flex items-center justify-center shadow-sm">
+                          <span className="w-5 h-5 rounded-full bg-emerald-600 text-white text-[10px] font-semibold flex items-center justify-center shadow-sm">
                             {inCart.quantity}
                           </span>
                         )}
                       </div>
-                      <h4 className="font-extrabold text-xs text-slate-900 mt-0.5 line-clamp-1">
+                      <h4 className="font-semibold text-xs text-slate-900 mt-0.5 line-clamp-1">
                         {prod.name}
                       </h4>
                     </div>
 
                     <div className="mt-2.5 flex items-center justify-between">
                       <div>
-                        <span className="text-xs font-black text-emerald-800">
+                        <span className="text-xs font-bold text-emerald-800">
                           ₹{prod.sellingPrice}
                         </span>
                         <span className="text-[10px] text-slate-500 font-medium ml-1">
@@ -510,7 +510,7 @@ export default function BillingPage() {
             <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Receipt className="w-4 h-4 text-emerald-700" />
-                <h3 className="font-extrabold text-sm text-slate-900">Current Bill (ബിൽ)</h3>
+                <h3 className="font-semibold text-sm text-slate-900">Current Bill (ബിൽ)</h3>
               </div>
               <span className="text-xs font-bold text-slate-500">
                 {items.length} {items.length === 1 ? 'item' : 'items'}
@@ -532,7 +532,7 @@ export default function BillingPage() {
                   <div key={item.productId} className="py-2.5 first:pt-0 last:pb-0 space-y-1.5">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-1.5">
-                        <span className="font-extrabold text-xs text-slate-900">
+                        <span className="font-semibold text-xs text-slate-900">
                           {item.name}
                         </span>
                         {item.sourceType === 'OUTSIDE_PURCHASE' && (
@@ -585,7 +585,7 @@ export default function BillingPage() {
                       </div>
 
                       {/* Line Total */}
-                      <span className="font-black text-xs text-slate-900">
+                      <span className="font-bold text-xs text-slate-900">
                         ₹{(item.quantity * item.unitPrice).toFixed(0)}
                       </span>
                     </div>
@@ -616,7 +616,7 @@ export default function BillingPage() {
               </div>
 
               {/* Grand Total */}
-              <div className="flex justify-between items-center text-sm font-black text-slate-900 border-t pt-2">
+              <div className="flex justify-between items-center text-sm font-bold text-slate-900 border-t pt-2">
                 <span>Grand Total (ബിൽ തുക):</span>
                 <span className="text-lg text-emerald-800">₹{grandTotal.toFixed(2)}</span>
               </div>
@@ -631,7 +631,7 @@ export default function BillingPage() {
                     value={paidAmount}
                     onChange={(e) => setPaidAmount(e.target.value)}
                     placeholder="0"
-                    className="w-28 text-right font-black text-base px-2.5 py-1.5 rounded-xl border-2 border-emerald-500 bg-white focus:outline-none"
+                    className="w-28 text-right font-bold text-base px-2.5 py-1.5 rounded-xl border-2 border-emerald-500 bg-white focus:outline-none"
                   />
                 </div>
 
@@ -701,7 +701,7 @@ export default function BillingPage() {
                   <span>Current Bill Balance Due (ഈ ബില്ലിലെ ബാക്കി):</span>
                   <span className="font-bold text-amber-800">₹{currentBillDue.toFixed(2)}</span>
                 </div>
-                <div className="flex justify-between text-xs font-black text-amber-950 border-t border-amber-200 pt-1">
+                <div className="flex justify-between text-xs font-bold text-amber-950 border-t border-amber-200 pt-1">
                   <span>Net Outstanding Balance (ആകെ കുടിശ്ശിക):</span>
                   <span className="text-rose-700 text-sm">₹{netTotalOutstanding.toFixed(2)}</span>
                 </div>
@@ -711,7 +711,7 @@ export default function BillingPage() {
               <button
                 onClick={handleSaveBill}
                 disabled={isSubmitting || items.length === 0 || !selectedCustomerId}
-                className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-black text-base shadow-lg shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
+                className="w-full py-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:scale-95 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold text-base shadow-lg shadow-emerald-600/30 flex items-center justify-center space-x-2 transition"
               >
                 <CheckCircle2 className="w-5 h-5" />
                 <span>{isSubmitting ? 'Saving...' : 'Save & Print Bill (ബിൽ അടിക്കുക)'}</span>

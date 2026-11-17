@@ -99,7 +99,7 @@ export default function CustomerModal({
         <div className="px-5 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
           <div className="flex items-center space-x-2">
             <UserPlus className="w-5 h-5 text-emerald-700" />
-            <h3 className="font-extrabold text-slate-900 text-sm">
+            <h3 className="font-semibold text-slate-900 text-sm">
               {customer ? 'Edit Customer' : 'Add New Customer / Bakery'}
             </h3>
           </div>
